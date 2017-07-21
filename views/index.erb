@@ -1,1 +1,22 @@
-<h1>ShoeBae Store</h1>
+<div class="row">
+  <div class="col s6">
+    <% if @stores.any? %>
+    <h4>(<%= @stores.count %>) Availabe Stores</h4>
+      <% @stores.each do |store| %>
+        <li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
+      <% end %>
+      <% else %>
+      <h2>Stores Closed</h2>
+    <% end %>
+  </div>
+  <div class="col s6">
+    <% if @brands.any? %>
+    <h4>(<%= @brands.count %>) Availabe Brands</h4>
+      <% @brands.each do |brand| %>
+        <li><a href="/brand/<%= brand.id %>"><%= brand.name %></a></li>
+      <% end %>
+      <% else %>
+      <h2>No brands available at the moment</h2>
+    <% end %>
+  </div>
+</div>
