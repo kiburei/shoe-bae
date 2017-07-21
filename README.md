@@ -28,4 +28,4 @@ Use `$ rspec` to :running: tests
 
 ## LICENSE
 
-[MIT LICENSE](https://github.com/kiburei/ToDo-1/blob/master/LICENSE)
+[MIT LICENSE](https://github.com/kiburei/shoe-bae/blob/master/LICENSE)

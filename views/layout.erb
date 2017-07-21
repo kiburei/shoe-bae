@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css">
     <meta charset="utf-8">
     <title>S|B</title>
   </head>
   <body>
-    <%= yield %>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">Shoebae</a>
+      <ul class="left hide-on-med-and-down">
+        <li class=""><a href="/contacts">Contact</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/brands">Brands</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
+  <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">How Shoebae works</h5>
+                <p class="grey-text text-lighten-4">If the shoe fits, then walk it. </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Top Brands</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Stuart Weitzman.</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Brian Atwood.</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Jimmy Choo.</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Walter Steiger.</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Shoebae by Kiburei
+            <a class="grey-text text-lighten-4 right" href="#!">kiburei</a>
+            </div>
+          </div>
+        </footer>
 </html>
