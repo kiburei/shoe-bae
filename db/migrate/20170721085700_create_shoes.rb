@@ -4,6 +4,7 @@ class CreateShoes < ActiveRecord::Migration[5.1]
       t.column(:label, :string)
       t.column(:size, :string)
       t.column(:color, :string)
+      
       t.timestamps
     end
   end

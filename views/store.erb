@@ -3,6 +3,11 @@
 <div class="row">
   <div class="col s3">
     <p>Add Brands To Store</p>
+    <form action="/stores/<%= @store.id %>" method="post">
+      <% if @store.brands.any? %>
+        
+      <% end %>
+    </form>
   </div>
   <div class="col s3">
     <p>Add Shoes To Store</p>
