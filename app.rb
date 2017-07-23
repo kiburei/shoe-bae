@@ -13,7 +13,7 @@ get '/myshop' do
 end
 
 post '/stores' do
-  store = Store.new(name: params.fetch('ne'))
+  store = Store.new(name: params.fetch('name'))
   if store.save
     redirect '/'
   else
@@ -31,6 +31,22 @@ post '/store/:id/shoes' do
   else
     redirect '/error'
   end
+end
+
+patch '/store/:id' do
+  @store = Store.find(params.fetch('id').to_i)
+  @store.update(name: params.fetch('name'))
+  @brands = Brand.all
+  erb(:store)
+end
+
+delete '/store/:id' do
+  @store = Store.find(params.fetch('id').to_i)
+  @store.shoes.each do |shoe|
+    shoe.destroy
+  end
+  @store.destroy
+  redirect '/'
 end
 
 post '/brands' do

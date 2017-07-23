@@ -1,1 +1,26 @@
 <h2><%= @brand.name %></h2>
+
+<div class="row">
+  <div class="col s6">
+    <h3>shoes</h3>
+    <div class="card">
+      <% if @brand.shoes.any? %>
+        <% @brand.shoes.each do |shoe| %>
+          <li><%= shoe.label %> size:<%= shoe.size %> color: <%= shoe.color %></li>
+        <% end %>
+      <% else %>
+        <p>No Shoes :(</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col s6">
+    <h3>distributors</h3>
+    <% if @brand.stores.any? %>
+      <% @brand.stores.each do |store| %>
+        <li><a href="/store/<%= store.id %>"><%= store.name %></a></li>
+      <% end %>
+    <% else %>
+      <p>No Outlets</p>
+    <% end %>
+  </div>
+</div>
