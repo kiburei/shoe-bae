@@ -1,18 +1,33 @@
 <h2><%= @store.name %></h2>
 
 <div class="row">
-  <div class="col s3">
-    <p>Add Brands To Store</p>
-    <form action="/stores/<%= @store.id %>" method="post">
-      <% if @store.brands.any? %>
-        
+  <div class="col s6">
+    <p>Shoe Shelf</p>
+    <div class="card">
+      <% if @store.shoes.any? %>
+        <% @store.shoes.each do |shoe| %>
+          <li><%= shoe.label %> -- <%=  shoe.size %></li>
+        <% end %>
       <% end %>
-    </form>
+    </div>
   </div>
-  <div class="col s3">
+  <div class="col s6">
     <p>Add Shoes To Store</p>
-  </div>
-  <div class="col s3">
-    <p>Add Categories To Store</p>
+    <form action="/store/<%= @store.id %>/shoes" method="post">
+      <input type="text" name="label" id="label" placeholder="Shoe Name/Label" required>
+      <div class="col s6">
+        <input type="text" name="size" id="size" placeholder="Shoe Size" required>
+      </div>
+      <div class="col s6">
+        <input type="text" name="color" id="color" placeholder="Shoe Color" required>
+      </div>
+      <% if @brands.any? %>
+        <% @brands.each do |brand|%>
+          <input type="checkbox" name="brand" id="<%= brand.name %>" value="<%= brand.id %>">
+          <label for="<%= brand.name %>"><%= brand.name %></label>
+        <% end %>
+      <% end %>
+      <button class="btn" type="submit" name="button">New Shoe</button>
+    </form>
   </div>
 </div>

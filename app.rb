@@ -13,8 +13,20 @@ get '/myshop' do
 end
 
 post '/stores' do
-  store = Store.new(name: params.fetch('name'))
+  store = Store.new(name: params.fetch('ne'))
   if store.save
+    redirect '/'
+  else
+    redirect '/error'
+  end
+end
+
+post '/store/:id/shoes' do
+  brand = Brand.find(params.fetch('brand').to_i)
+  store_id = params.fetch('id').to_i
+  store = Store.find(store_id)
+  @shoe = Shoe.new(label: params.fetch('label'), size: params.fetch('size'), color: params.fetch('color'), brand_id: brand.id, store_id: store.id)
+  if @shoe.save
     redirect '/'
   else
     redirect '/error'
@@ -31,6 +43,7 @@ post '/brands' do
 end
 
 get '/store/:id' do
+  @brands = Brand.all
   @store = Store.find(params.fetch('id').to_i)
   erb(:store)
 end
