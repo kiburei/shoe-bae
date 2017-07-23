@@ -69,6 +69,12 @@ get '/brand/:id' do
   erb(:brand)
 end
 
+patch '/brand/:id' do
+  @brand = Brand.find(params.fetch('id').to_i)
+  @brand.update(name: params.fetch('name'))
+  erb(:brand)
+end
+
 delete '/brand/:id' do
   brand = Brand.find(params.fetch('id').to_i)
   brand.shoes.each do |shoe|
