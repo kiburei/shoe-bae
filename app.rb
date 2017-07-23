@@ -69,6 +69,15 @@ get '/brand/:id' do
   erb(:brand)
 end
 
+delete '/brand/:id' do
+  brand = Brand.find(params.fetch('id').to_i)
+  brand.shoes.each do |shoe|
+    shoe.destroy
+  end
+  brand.destroy
+  redirect '/'
+end
+
 get '/error' do
   erb(:error)
 end
