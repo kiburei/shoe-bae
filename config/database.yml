@@ -1,6 +1,13 @@
 development:
   adapter: postgresql
   database: shoe_bae_dev
+  username: jabfyumpuvbuuy
+  password: c6b0466b139a28f8c92c5d882da24857423f5a1a961f5c5a381de2baea186236
+  port: 5432
+  database: d88stmmuoghkaq
+  host: ec2-184-73-249-56.compute-1.amazonaws.com
+
+
 
 test:
   adapter: postgresql
