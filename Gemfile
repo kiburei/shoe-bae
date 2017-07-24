@@ -1,4 +1,5 @@
 source("https://rubygems.org")
+
   gem "sinatra"
   gem "sinatra-contrib", :require => "sinatra/reloader"
   gem "sinatra-activerecord"
@@ -10,3 +11,5 @@ source("https://rubygems.org")
     gem "pry"
     gem "capybara"
   end
+
+  ruby '2.2.3'
